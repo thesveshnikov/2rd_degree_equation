@@ -7,7 +7,10 @@ c = input("Enter the value of C:\n")
 delta = int(b)*int(b)-int(4)*int(a)*int(c)
 
 # ROOTS
-if int(b) < 0:
+if delta < 0:
+    print("It has no real roots.")
+
+if delta > 0:
     positive_b = abs(int(b))
     root_1 = (positive_b+delta)/(2*int(a))
     root_2 = (positive_b-delta)/(2*int(a))
