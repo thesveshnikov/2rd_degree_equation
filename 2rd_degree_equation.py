@@ -1,17 +1,21 @@
+import math
+
 # VALUES
-a = input("Enter the value of A:\n")
-b = input("Enter the value of B:\n")
-c = input("Enter the value of C:\n")
+a = float(input("Enter the value of A:\n"))
+b = float(input("Enter the value of B:\n"))
+c = float(input("Enter the value of C:\n"))
 
 # DELTA
-delta = int(b)*int(b)-int(4)*int(a)*int(c)
+delta = b ** 2 - 4 * a * c
 
 # ROOTS
 if delta < 0:
     print("It has no real roots.")
-
-if delta > 0:
-    positive_b = abs(int(b))
-    root_1 = (positive_b+delta)/(2*int(a))
-    root_2 = (positive_b-delta)/(2*int(a))
-    print("The roots are: ", root_1, "And", root_2)
+elif delta == 0:
+    root = -b / (2 * a)
+    print(f"It has one real root: {root:.2f}")
+else:
+    sqrt_delta = math.sqrt(delta)
+    root_1 = (-b + sqrt_delta) / (2 * a)
+    root_2 = (-b - sqrt_delta) / (2 * a)
+    print(f"The roots are: {root_1:.2f} and {root_2:.2f}")
